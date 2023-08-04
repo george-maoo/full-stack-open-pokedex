@@ -10,15 +10,23 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
+
       - name: Install dependencies
         run: npm install
+
       - name: Lint code
         run: npm run eslint
+
+      - name: Build
+        run: npm run build
+
       - name: Run integration tests
         run: npm run test
+
       - name: run e2e tests
         uses: cypress-io/github-action@v5
         with:
