@@ -11,6 +11,8 @@ app.get('/version', (req, res) => {
 })
 
 app.get('/health', (req, res) => {
+  throw new Error()
+  // eslint-disable-next-line
   res.send('ok')
 })
 
